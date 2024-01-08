@@ -21,17 +21,4 @@ docker run --name hbot \
 ```
 
 ### docker compose
-```yaml
-services:
-  hbot:
-    image: hbot
-    container_name: hbot
-    restart: unless-stopped
-    environment: # Quotation marks should be removed
-        - BOT_NAME=hbot
-        - SITE=gallery-dl_supported_site
-        - DL_URL=url
-        - TOKEN=asdsafasd123124
-    volumes:
-        - ./:/app/
-```
+check [docker-compose.yml](./docker-compose.yml)
