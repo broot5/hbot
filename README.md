@@ -16,7 +16,7 @@ docker run --name hbot \
     -e SITE="gallery-dl supported site" \
     -e DL_URL="url" \
     -e TOKEN="tg bot token" \
-    -v ./nurl.json:/app/nurl.json
+    -v ./nurl.json:/app/nurl.json \
     hbot
 ```
 
