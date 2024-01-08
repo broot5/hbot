@@ -12,7 +12,7 @@ from telegram.ext import (
 from PIL import Image
 from telegraph import Telegraph
 
-BOT_NAME = "hbot"
+BOT_NAME = os.environ["BOT_NAME"]
 SITE = os.environ["SITE"]
 DL_URL = os.environ["DL_URL"]
 TOKEN = os.environ["TOKEN"]
