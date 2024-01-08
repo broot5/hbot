@@ -13,10 +13,10 @@ docker buildx build -t hbot .
 ```console
 docker run --name hbot \
     -e BOT_NAME="hbot" \
-    -e SITE="gallery-dl supported site" \
+    -e SITE="gallery-dl_supported_site" \
     -e DL_URL="url" \
-    -e TOKEN="tg bot token" \
-    -v ./nurl.json:/app/nurl.json \
+    -e TOKEN="sdsafasd123124" \
+    -v ./:/app/ \
     hbot
 ```
 
@@ -27,12 +27,11 @@ services:
     image: hbot
     container_name: hbot
     restart: unless-stopped
-    environment:
-        - BOT_NAME="hbot"
-        - SITE="gallery-dl supported site"
-        - DL_URL="url"
-        - TOKEN="tg bot token"
+    environment: # Quotation marks should be removed
+        - BOT_NAME=hbot
+        - SITE=gallery-dl_supported_site
+        - DL_URL=url
+        - TOKEN=asdsafasd123124
     volumes:
-        - ./nurl.json:/app/nurl.json
+        - ./:/app/
 ```
-
