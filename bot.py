@@ -138,7 +138,7 @@ async def process(bot_name: str, number: int) -> str:
     # info.json 검사
     if str(number) != str(read_info(number, "gallery_id")):
         new_number = int(read_info(number, "gallery_id"))
-        os.rename(str(number), str(read_info(number, "gallery_id")))
+        os.rename(f"dl/{str(number)}", f"dl/{str(read_info(number, 'gallery_id'))}")
         number = new_number
 
     # webp를 png로 변환
