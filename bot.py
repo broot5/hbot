@@ -145,15 +145,16 @@ async def process(bot_name: str, number: int) -> str:
     await convert_image_task(number, count)
 
     # telegraph에 업로드(이미지 각자 업로드 -> 전체 html 파일 업로드)
+    img_urls = await upload_img_task(number, count)
+
     telegraph = Telegraph()
     print(telegraph.create_account(short_name=bot_name, author_name=bot_name))
 
-    img_urls = await upload_img_task(number, count)
-
     title = f"{read_info(number, 'title')}-{number}"
-    html = generate_html(img_urls)
 
-    response = telegraph.create_page(title, html_content=html, author_name=bot_name)
+    response = telegraph.create_page(
+        title, html_content=generate_html(img_urls), author_name=bot_name
+    )
 
     print(response)
 
