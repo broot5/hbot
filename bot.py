@@ -98,7 +98,7 @@ async def upload_img(number: int, i: int) -> str:
             # 응답을 json 형태로 파싱
             result = await response.json()
 
-            # 이미지 용량이 커서 업로드 되지 않는 경우... 이미지 압축? 이미지 crop후 나눠서 업로드??
+            # 이미지 용량이 커서(5MB) 업로드 되지 않는 경우... 이미지 압축? 이미지 crop후 나눠서 업로드??
 
             # 업로드된 이미지의 URL을 반환
             if result and isinstance(result, list) and "src" in result[0]:
