@@ -1,11 +1,11 @@
-version: "3.9"
+version: "3.8"
 
 services:
   hbot:
-    image: hbot
+    build: ./
     container_name: hbot
     restart: unless-stopped
-    environment: # Quotation marks should be removed
+    environment:
         - BOT_NAME=hbot
         - SITE=gallery-dl_supported_site
         - DL_URL=url
