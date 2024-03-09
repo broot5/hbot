@@ -24,7 +24,7 @@ python bot.py
 ```console
 git clone https://github.com/broot5/hbot.git
 cd hbot
-docker buildx build -t hbot .
+docker compose up -d
 ```
 
 ### docker run
