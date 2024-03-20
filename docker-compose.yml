@@ -5,10 +5,6 @@ services:
     build: ./
     container_name: hbot
     restart: unless-stopped
-    environment:
-      - BOT_NAME=hbot
-      - SITE=gallery-dl_supported_site
-      - DL_URL=url
-      - TOKEN=asdsafasd123124
     volumes:
       - ./:/app/
+    env_file: .env

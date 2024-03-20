@@ -39,4 +39,5 @@ docker run --name hbot \
 ```
 
 ### docker compose
-check [docker-compose.yml](./docker-compose.yml)
+1. rename example.env to .env and modify it.
+2. docker compose up -d
