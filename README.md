@@ -20,13 +20,6 @@ python bot.py
 ```
 
 ## Run with docker
-### Build image
-```console
-git clone https://github.com/broot5/hbot.git
-cd hbot
-docker compose up -d
-```
-
 ### docker run
 ```console
 docker run --name hbot \
@@ -34,10 +27,24 @@ docker run --name hbot \
     -e SITE="gallery-dl_supported_site" \
     -e DL_URL="url" \
     -e TOKEN="sdsafasd123124" \
-    -v ./:/app/ \
+    -v ./save:/app/save \
     hbot
 ```
 
 ### docker compose
-1. rename example.env to .env and modify it.
-2. docker compose up -d
+```yaml
+version: "3.8"
+
+services:
+  hbot:
+    build: ./
+    container_name: hbot
+    restart: unless-stopped
+    volumes:
+      - ./save:/app/save
+    environment:
+      - BOT_NAME=hbot
+      - SITE=gallery-dl_supported_site
+      - DL_URL=url/{}
+      - TOKEN=asdsafasd123124
+```
