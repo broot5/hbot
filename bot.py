@@ -135,7 +135,7 @@ async def process(bot_name: str, number: int) -> str:
     download(number)
     count = read_info(number, "count")
 
-    # info.json 검사
+    # info.json 검사(다운로드 된 number와 입력한 number 일치하지 않을 경우)
     if str(number) != str(read_info(number, "gallery_id")):
         new_number = int(read_info(number, "gallery_id"))
         os.rename(f"dl/{str(number)}", f"dl/{str(read_info(number, 'gallery_id'))}")
