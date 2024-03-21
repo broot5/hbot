@@ -120,13 +120,13 @@ def generate_html(img_urls: list) -> str:
 # TODO: 함수 분리해서 진행 상황 보고 가능할 듯
 async def process(bot_name: str, number: int) -> str:
     # nurl.json 존재 확인하고 없으면 생성
-    if not os.path.isfile("nurl.json"):
+    if not os.path.isfile("save/nurl.json"):
         nurl = dict()
-        with open("nurl.json", "w") as outfile:
+        with open("save/nurl.json", "w") as outfile:
             json.dump(nurl, outfile)
 
     # nurl.json 불러오고 해당하는 number 존재하면 그에 해당하는 url 리턴
-    with open("nurl.json", "r") as file:
+    with open("save/nurl.json", "r") as file:
         nurl = json.load(file)
     if str(number) in nurl:
         return nurl.get(str(number))
@@ -160,7 +160,7 @@ async def process(bot_name: str, number: int) -> str:
 
     # nurl.json에 number-url 쌍 저장
     nurl[str(number)] = response.get("url")
-    with open("nurl.json", "w") as outfile:
+    with open("save/nurl.json", "w") as outfile:
         json.dump(nurl, outfile)
 
     return nurl.get(str(number))
