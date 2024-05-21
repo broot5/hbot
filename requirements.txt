@@ -37,7 +37,7 @@ multidict==6.0.5
     #   yarl
 pillow==10.3.0
 python-telegram-bot==21.0.1
-requests==2.31.0
+requests==2.32.0
     # via
     #   gallery-dl
     #   telegraph
